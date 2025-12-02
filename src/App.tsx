@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import './App.css'
 import Layout from './layout/Layout'
+import PageLoader from './components/PageLoader'
 import HomePage from './pages/Home/home-page'
 import BooksByCategory from './pages/BookCategory/BooksByCategory'
 import BooksPage from './pages/Books/BooksPage'
@@ -25,6 +26,7 @@ function App() {
   return (
     <QueryClientProvider client={queryClient}>
       <Router>
+        <PageLoader />
         <Layout>
           <Routes>
             <Route path="/" element={<HomePage />} />

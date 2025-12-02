@@ -7,6 +7,7 @@ import { useLocation } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import { useAuthors } from '../../modules/authors'
 import AuthorCard from './components/AuthorCard'
+import Loading from '../../ui/Loading'
 
 function AuthorsPage() {
   const location = useLocation()
@@ -78,15 +79,7 @@ function AuthorsPage() {
 
         {/* Loading State */}
         {isLoading && (
-          <motion.div
-            initial="hidden"
-            animate="visible"
-            variants={loadingVariants}
-            className="py-16 text-center"
-          >
-            <div className="inline-block animate-spin rounded-full h-12 w-12 border-4 border-blue-600 border-t-transparent mb-4"></div>
-            <p className="text-gray-600">Loading authors...</p>
-          </motion.div>
+          <Loading size="lg" message="Loading authors..." />
         )}
 
         {/* Error State */}

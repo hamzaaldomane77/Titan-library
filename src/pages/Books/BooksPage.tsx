@@ -129,8 +129,8 @@ function BooksPage() {
           </div>
 
           {/* Search & Category Filter */}
-          <div className="flex flex-col gap-6 md:flex-row md:items-center">
-            <div className="flex items-center gap-3">
+          <div className="flex flex-col gap-4 md:flex-row md:items-center md:gap-6">
+            <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:gap-3 w-full md:w-auto">
               <label className="text-sm font-medium text-gray-700 whitespace-nowrap">Search by</label>
               <input
                 type="text"
@@ -144,13 +144,14 @@ function BooksPage() {
                 }}
                 placeholder=" title, author, or ISBN..."
                 className="
-                  flex-1 rounded-xl border border-gray-200 bg-white px-3 py-2 text-sm
+                  w-full sm:flex-1 rounded-xl border border-gray-200 bg-white px-3 py-2 text-sm
                   shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500
+                  min-w-0
                 "
               />
             </div>
-            <div className="flex items-center gap-3 md:flex-wrap md:gap-3">
-              <div className="flex items-center gap-2">
+            <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:gap-3 w-full md:w-auto">
+              <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:gap-2 w-full sm:w-auto">
                 <label className="text-sm font-medium text-gray-700 whitespace-nowrap">Category</label>
                 <select
                   value={selectedCategoryId}
@@ -160,8 +161,9 @@ function BooksPage() {
                     setPage(1)
                   }}
                   className="
-                    rounded-xl border border-gray-200 bg-white px-3 py-2 text-sm
+                    w-full max-w-[200px] sm:w-auto sm:min-w-[140px] rounded-xl border border-gray-200 bg-white px-3 py-2 text-sm
                     shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500
+                    min-w-0
                   "
                 >
                   {categoriesOptions.map((cat) => (
@@ -171,7 +173,7 @@ function BooksPage() {
                   ))}
                 </select>
               </div>
-              <div className="flex items-center gap-2">
+              <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:gap-2 w-full sm:w-auto">
                 <label className="text-sm font-medium text-gray-700 whitespace-nowrap">Availability</label>
                 <select
                   value={availabilityFilter}
@@ -181,8 +183,9 @@ function BooksPage() {
                     setPage(1)
                   }}
                   className="
-                    rounded-xl border border-gray-200 bg-white px-3 py-2 text-sm
+                    w-full max-w-[200px] sm:w-auto sm:min-w-[140px] rounded-xl border border-gray-200 bg-white px-3 py-2 text-sm
                     shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500
+                    min-w-0
                   "
                 >
                   <option value="all">All</option>
