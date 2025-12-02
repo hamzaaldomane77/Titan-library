@@ -2,7 +2,7 @@ import { useEffect } from 'react'
 import { useLocation } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import ContactIntroSection from './components/ContactIntroSection'
-import ContactInfoSection from './components/ContactInfoSection'
+
 import ContactFormSection from './components/ContactFormSection'
 import LocationMapSection from './components/LocationMapSection'
 import SocialLinksSection from './components/SocialLinksSection'
@@ -48,14 +48,7 @@ function ContactPage() {
       </motion.div>
 
       {/* Contact Info Section */}
-      <motion.div
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, margin: '-50px' }}
-        variants={sectionVariants}
-      >
-        <ContactInfoSection />
-      </motion.div>
+    
 
       {/* Contact Form Section */}
       <motion.div
